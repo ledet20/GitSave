@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import { Header } from "./components/Header";
 import Search from "./components/Search";
-import { SearchData } from "./components/SearchData";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
+
+console.log(process.env.REACT_APP_API_KEY);
+
 const client = new ApolloClient({
-  uri: "https://api.github.com/graphql"
+  uri: "https://api.github.com/graphql",
+  headers: {
+    authorization: `Bearer ${
+      process.env.REACT_APP_API_KEY
+    }`,
+  },
 });
 
 class App extends Component {
@@ -16,7 +23,6 @@ class App extends Component {
         <div>
           <Header />
           <Search />
-          <SearchData />
         </div>
       </ApolloProvider>
     );

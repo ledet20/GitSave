@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../stylesheets/search.css";
+import { SearchData } from './SearchData';
 
 class Search extends Component {
   state = {
@@ -21,29 +22,25 @@ class Search extends Component {
     console.log(this.state.userName);
   };
 
-  clearSearchBox = e => {
-    e.preventDefault();
-  };
 
   render() {
     return (
       <div>
-        <form onSubmit={this.clearSearchBox}>
-          <h2 className="searchTitle"> Search by User or Repository</h2>
-          <input
+          <h2 className="searchTitle"> Search by User and Repository or just User </h2>
+         Repository Name: <input
             className="inputField"
             type="text"
             value={this.state.repoName}
             onChange={this.setRepoName}
           />
-          <input
+         User Name: <input
             className="inputField"
             type="text"
             value={this.state.userName}
             onChange={this.setUserName}
           />
-          <input type="button" value="Search" />
-        </form>
+        <button type='submit'> Search </button> 
+        <SearchData user_name={this.state.userName} repo_name={this.state.repoName}/>
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const user_query = gql`
-query($user_login:String!) {
-    user(login: $user_login) {
+query($user_name:String!) {
+    user(login: $user_name) {
       websiteUrl
       repositories(last:5) {
         edges {
@@ -23,8 +23,8 @@ query($user_login:String!) {
 `
 
 export const repo_query = gql`
-query($owner_name: String!,$repo_name: String!) {
-    repository(owner: $owner_name,name:$repo_name) {
+query($user_name: String!,$repo_name: String!) {
+    repository(owner: $user_name,name:$repo_name) {
       description
       forkCount
       issues(last:4, states:OPEN) {

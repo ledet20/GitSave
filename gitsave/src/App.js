@@ -4,9 +4,6 @@ import Search from "./components/Search";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
-
-console.log(process.env.REACT_APP_API_KEY);
-
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
   headers: {

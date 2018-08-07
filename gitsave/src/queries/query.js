@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 
 export const user_query = gql`
-query($user_name:String!) {
+query($user_name: String!) {
     user(login: $user_name) {
       websiteUrl
       repositories(last:5) {

@@ -4,8 +4,8 @@ import { SearchData } from './SearchData';
 
 class Search extends Component {
   state = {
-    repoName: "",
-    userName: ""
+    repoName: "ledet20",
+    userName: "ledet20"
   };
 
   setRepoName = e => {

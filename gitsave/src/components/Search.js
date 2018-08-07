@@ -25,7 +25,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div>Ï
           <h2 className="searchTitle"> Search by User and Repository or just User </h2>
          Repository Name: <input
             className="inputField"

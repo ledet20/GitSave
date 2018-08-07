@@ -4,9 +4,8 @@ import { Query } from "react-apollo";
 
 export const SearchData = props => {
   // map all data items
-  const login = 'ledet20';
   return (
-    <Query query={user_query} variables={ {props}}>
+    <Query query={user_query} variables={{ props }}>
       {({ loading, error, data }) => {
         if (loading) return "Loading...";
         if (error) return `Error! ${error.message}`;

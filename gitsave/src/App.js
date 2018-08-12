@@ -12,6 +12,7 @@ const httpLink = new HttpLink({ uri: 'https://api.github.com/graphql'});
 
 const GITHUB_TOKEN_KEY = process.env.REACT_APP_API_KEY;
 console.log(GITHUB_TOKEN_KEY);
+console.log(test);
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers

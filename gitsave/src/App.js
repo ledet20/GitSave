@@ -10,11 +10,14 @@ import { ApolloLink , concat} from 'apollo-link';
 
 const httpLink = new HttpLink({ uri: 'https://api.github.com/graphql'});
 
+const GITHUB_TOKEN_KEY = process.env.REACT_APP_API_KEY;
+console.log(GITHUB_TOKEN_KEY);
+
 const authMiddleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers
   operation.setContext({
       headers: {
-          authorization: 'Bearer f7eecca8395a0fda567cb25cca93d9612484c27e',
+          authorization: `Bearer ${GITHUB_TOKEN_KEY}`,
       }
   });
 

@@ -1,10 +1,10 @@
 import React from "react";
-import { user_query, repo_query } from "../queries/query";
+import { user_query} from "../queries/query";
 import { Query } from "react-apollo";
 import { DisplayUser } from "./DisplayUser";
 
-export const SearchData = props => {
-  const { user_name, repo_name } = props;
+export const UserSearch = props => {
+  const { user_name } = props;
   console.log(props.user_name);
   return (
     <Query query={user_query} variables={{ user_name }}>

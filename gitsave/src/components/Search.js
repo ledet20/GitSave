@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../stylesheets/search.css";
-import { SearchData } from "./SearchData";
+import { UserSearch } from "./UserSearch";
+import { RepoSearch } from "./RepoSearch";
 
 class Search extends Component {
   state = {
@@ -44,10 +45,10 @@ class Search extends Component {
           onChange={this.setUserName}
         />
         <button type="submit"> Search </button>
-        <SearchData
+        {/* <UserSearch
           user_name={this.state.userName}
-          repo_name={this.state.repoName}
-        />
+        /> */}
+        <RepoSearch user_name={this.state.userName} repo_name={this.state.repoName}/>
       </div>
     );
   }

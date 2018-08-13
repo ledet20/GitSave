@@ -1,5 +1,5 @@
 import React from "react";
-import { user_query} from "../queries/query";
+import { user_query } from "../queries/query";
 import { Query } from "react-apollo";
 import { DisplayUser } from "./DisplayUser";
 
@@ -10,7 +10,7 @@ export const UserSearch = props => {
     <Query query={user_query} variables={{ user_name }}>
       {({ loading, error, data }) => {
         if (loading) return "Loading...";
-        if (error) return `Error! ${error.message}`;
+        if (error) return ``;
         console.log(data.user.repositories);
         return (
           <div>

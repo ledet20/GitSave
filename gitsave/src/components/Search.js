@@ -6,7 +6,12 @@ import { RepoSearch } from "./RepoSearch";
 class Search extends Component {
   state = {
     repoName: "",
-    userName: ""
+    userName: "",
+    component: {
+      repo: RepoSearch,
+      user: UserSearch
+    },
+    searchButtonPressed: false
   };
 
   setRepoName = e => {
@@ -21,6 +26,12 @@ class Search extends Component {
       userName: e.target.value
     });
     console.log(this.state.userName);
+  };
+
+  setSearchState = () => {
+    this.setState({
+      searchButtonPressed: true
+    });
   };
 
   render() {
@@ -44,11 +55,18 @@ class Search extends Component {
           value={this.state.userName}
           onChange={this.setUserName}
         />
-        <button type="submit"> Search </button>
+        <button type="submit" onClick={this.setSearchState}>
+          {" "}
+          Search{" "}
+        </button>
         {/* <UserSearch
           user_name={this.state.userName}
         /> */}
-        <RepoSearch user_name={this.state.userName} repo_name={this.state.repoName}/>
+        <RepoSearch
+          user_name={this.state.userName}
+          repo_name={this.state.repoName}
+          onSearch={this.state.searchButtonPressed}
+        />
       </div>
     );
   }
